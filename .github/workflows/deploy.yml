@@ -31,8 +31,8 @@ jobs:
           context: .
           push: true
           tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/my-web-app:latest
-            ${{ secrets.DOCKERHUB_USERNAME }}/my-web-app:${{ github.sha }}
+            ${{ secrets.DOCKERHUB_USERNAME }}/test1:latest
+            ${{ secrets.DOCKERHUB_USERNAME }}/test1:${{ github.sha }}
 
   # ─── JOB 2: Deploy ke VPS via SSH ───────────────────────────────
   deploy:
