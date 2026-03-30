@@ -49,17 +49,9 @@ jobs:
           key: ${{ secrets.VPS_SSH_KEY }}
           port: ${{ secrets.VPS_PORT }}
           script: |
-            # Pindah ke folder project
             cd /opt/my-web-app
-
-            # Pull image terbaru dari Docker Hub
-            docker pull ${{ secrets.DOCKERHUB_USERNAME }}/my-web-app:latest
-
-            # Jalankan ulang container dengan docker compose
+            docker pull ${{ secrets.DOCKERHUB_USERNAME }}/test1:latest
             docker compose down
             docker compose up -d
-
-            # Bersihkan image lama
             docker image prune -f
-
             echo "Deployment berhasil!"
